@@ -1,12 +1,12 @@
 
-require 'sensu-plugins-wordpress/version'
+require 'sensu-plugins-uchiwa/version'
 
 # Load the defaults
 
 #
 # Default class
 #
-module SensuPluginsWordpress
+module SensuPluginsUchiwa
   class << self
   end
 
