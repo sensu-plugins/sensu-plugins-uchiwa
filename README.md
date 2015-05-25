@@ -10,7 +10,7 @@
 ## Functionality
 
 ## Files
- * bin/check-uchiwa-health
+ * bin/check-uchiwa-health.rb
 
 ## Usage
 
