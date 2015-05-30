@@ -12,7 +12,7 @@ end
 pvt_key = '~/.ssh/gem-private_key.pem'
 
 Gem::Specification.new do |s|
-  s.authors                = ['Sensu Plugins and contributors']
+  s.authors                = ['Sensu-Plugins and contributors']
   s.cert_chain             = ['certs/sensu-plugins.pem']
   s.date                   = Date.today.to_s
   s.description            = 'Sensu plugins for uchiwa'
@@ -22,8 +22,8 @@ Gem::Specification.new do |s|
   s.homepage               = 'https://github.com/sensu-plugins/sensu-plugins-uchiwa'
   s.license                = 'MIT'
   s.metadata               = { 'maintainer'         => '',
-                               'development_status' => 'unmaintained',
-                               'production_status'  => 'unstable - testing reccomended',
+                               'development_status' => 'active',
+                               'production_status'  => 'unstable - testing recommended',
                                'release_draft'      => 'false',
                                'release_prerelease' => 'false'
                               }
