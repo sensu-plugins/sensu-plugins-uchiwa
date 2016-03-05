@@ -1,19 +1,33 @@
 language: ruby
 cache:
-  - bundler
+- bundler
 install:
-  - bundle install
+- bundle install
 rvm:
-  - 1.9.3
-  - 2.0
-  - 2.1
-  - 2.2
+- 1.9.3
+- 2.0
+- 2.1
+- 2.2
 notifications:
   email:
     recipients:
-      - sensu-plugin@sensu-plugins.io
+    - sensu-plugin@sensu-plugins.io
     on_success: change
     on_failure: always
-
 script:
-  - 'bundle exec rake default'
+- bundle exec rake default
+- gem build sensu-plugins-uchiwa.gemspec
+- gem install sensu-plugins-uchiwa-*.gem
+deploy:
+  provider: rubygems
+  api_key:
+    secure: KYhzerrRHBDjL4qkgdM2wSnMh6mueQfTXJGETF89Py2ld3OPGAkVR4erO96Lf9+Ws3XuXffnWLq5OdE4Exm9Dr3I0PRyJzxXcnyQ37tNLSqhBYqFa0bSgx3Zsfc5uBdRaPKf6yBeZyUk529JhaQGsu0CDWqdIM1/UdBYqFxBdUQ=
+  gem: sensu-plugins-uchiwa
+  on:
+    ags: true
+    all_branches: true
+    rvm: 1.9.3
+    rvm: 2.0
+    rvm: 2.1
+    rvm: 2.2
+    repo: sensu-plugins/sensu-plugins-uchiwa
