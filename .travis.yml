@@ -24,7 +24,7 @@ deploy:
     secure: KYhzerrRHBDjL4qkgdM2wSnMh6mueQfTXJGETF89Py2ld3OPGAkVR4erO96Lf9+Ws3XuXffnWLq5OdE4Exm9Dr3I0PRyJzxXcnyQ37tNLSqhBYqFa0bSgx3Zsfc5uBdRaPKf6yBeZyUk529JhaQGsu0CDWqdIM1/UdBYqFxBdUQ=
   gem: sensu-plugins-uchiwa
   on:
-    ags: true
+    tags: true
     all_branches: true
     rvm: 1.9.3
     rvm: 2.0
