@@ -60,6 +60,13 @@ class UchiwaHealthCheck < Sensu::Plugin::Check::CLI
          description: 'Your uchiwa password',
          required: false
 
+  option :https,
+         short: '-s',
+         long: '--secure',
+         description: 'Use HTTPS instead of HTTP',
+         default: false,
+         required: false
+
   def json_valid?(str)
     JSON.parse(str)
     return true
@@ -68,11 +75,11 @@ class UchiwaHealthCheck < Sensu::Plugin::Check::CLI
   end
 
   def run
-    endpoint = "http://#{config[:host]}:#{config[:port]}"
+    endpoint = config[:https] ? "https://#{config[:host]}:#{config[:port]}" : "http://#{config[:host]}:#{config[:port]}"
     url      = URI.parse(endpoint)
 
     begin
-      res = Net::HTTP.start(url.host, url.port) do |http|
+      res = Net::HTTP.start(url.host, url.port, :use_ssl => url.scheme == 'https', verify_mode => OpenSSL::SSL::VERIFY_NONE) do |http|
         req = Net::HTTP::Get.new('/health')
         req.basic_auth config[:username], config[:password] if config[:username] && config[:password]
         http.request(req)
