@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
+### Fixed
+- verify_mode issue since Ruby >= 2.3.0 : [sensu-plugins-uchiwa/issues/5](https://github.com/sensu-plugins/sensu-plugins-uchiwa/issues/5)
 
 ## [0.0.4] - 2016-06-15
 ### Added
