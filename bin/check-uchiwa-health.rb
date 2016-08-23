@@ -79,9 +79,11 @@ class UchiwaHealthCheck < Sensu::Plugin::Check::CLI
     url      = URI.parse(endpoint)
 
     begin
-      res = Net::HTTP.start(url.host, url.port, :use_ssl => url.scheme == 'https', verify_mode => OpenSSL::SSL::VERIFY_NONE) do |http|
+      res = Net::HTTP.start(url.host, url.port) do |http|
         req = Net::HTTP::Get.new('/health')
         req.basic_auth config[:username], config[:password] if config[:username] && config[:password]
+        http.use_ssl = url.scheme == 'https'
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         http.request(req)
       end
     rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError, Net::HTTPBadResponse,
