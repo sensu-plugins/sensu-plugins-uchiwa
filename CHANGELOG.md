@@ -4,7 +4,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
-+- verify_mode needs to be a hash_key: [sensu-plugins-uchiwa/issues/5](https://github.com/sensu-plugins/sensu-plugins-uchiwa/issues/4)
+### Fixed
+- verify_mode needs to be a hash_key: [sensu-plugins-uchiwa/issues/5](https://github.com/sensu-plugins/sensu-plugins-uchiwa/issues/4)
+
+### Added
+- Ruby 2.3.0 support
+
+### Removed
+- Ruby 1.9.3 support
 
 ## [0.0.4] - 2016-06-15
 ### Added
